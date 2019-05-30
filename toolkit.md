@@ -1,0 +1,1 @@
+cat id_rsa.pub | ssh -i india_access_key.pem ec2-user@13.126.34.95 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
