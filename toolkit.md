@@ -1,1 +1,12 @@
+## copy local public key to server for ssh key authentication
 cat id_rsa.pub | ssh -i india_access_key.pem ec2-user@13.126.34.95 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+## create a jks keystore 
+keytool -genkey -alias <domain> -keyalg RSA -keystore <keystorename>.jks -keysize 2048
+  
+## export cert from keystore
+keytool -export -alias <domain> -storepass <password> -file <certname>.cer -keystore <keystorename>.jks
+  
+## add certificate to jre truststore to allow java clients to authenticate the cert
+keytool -importcert -keystore cacerts -storepass changeit -file <certname>.cer -alias <domain>
+  
