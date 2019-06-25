@@ -1,5 +1,8 @@
 #!/bin/bash
-#The following describes the steps to deploy a jar application.
+#The following describes the steps to deploy a jar application into the background using nohup
+#make the file executable then create an alias to execute the commands
+#to deploy a jar file type `alias file.jar`
+#to undeploy type `alias -undeploy file.jar`
 
 ERROR='\033[0;31m'
 ENDERROR='\033[0m'
