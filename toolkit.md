@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ## copy local public key to server for ssh key authentication
 cat id_rsa.pub | ssh -i india_access_key.pem ec2-user@<hostip> "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
@@ -10,3 +11,9 @@ keytool -export -alias <domain> -storepass <password> -file <certname>.cer -keys
 ## add certificate to jre truststore to allow java clients to authenticate the cert
 keytool -importcert -keystore cacerts -storepass changeit -file <certname>.cer -alias <domain>
   
+=======
+cat id_rsa.pub | ssh -i india_access_key.pem ec2-user@13.233.163.150 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+
+pgrep -a java | grep ids | awk '{ print $1 }'
+>>>>>>> Stashed changes
