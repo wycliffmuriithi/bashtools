@@ -13,7 +13,7 @@ DATABASES=mysql  -u ${MYSQL_USER} -p${MYSQL_PASSWORD} -Bse 'show databases' | gr
  for db in $DATABASES
         do
                 FILE_NAME="${db}.sql"
-                mysqldump -u ${MYSQL_USER} -p${MYSQL_PASSWORD} $db >${BACKUP_DIR}/${FILE_NAME}
+                mysqldump -u ${MYSQL_USER} -p${MYSQL_PASSWORD} --routines $db >${BACKUP_DIR}/${FILE_NAME}
         done
 
 
