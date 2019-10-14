@@ -16,4 +16,7 @@ cat id_rsa.pub | ssh -i india_access_key.pem ec2-user@13.233.163.150 "mkdir -p ~
 
 
 pgrep -a java | grep ids | awk '{ print $1 }'
->>>>>>> Stashed changes
+
+## pass directory config while running docker image
+docker run -v C:\Users\wgicheru\eclipse-workspace\sme\configs:/sme/config police-sme-app
+
