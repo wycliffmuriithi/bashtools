@@ -23,3 +23,6 @@ docker build -t police-sme-app:latest .
 ## pass directory config while running docker image
 docker run -v C:\Users\wgicheru\eclipse-workspace\sme\configs:/sme/config -p 9696:9696 police-sme-app
 
+## map port on server to port on local machine
+this command works for scenarios like mpesa where you need to have use a specific IP.
+ssh -R 8082:localhost:8084 jmungai@10.20.2.4
