@@ -1,0 +1,19 @@
+[Unit]
+Description=Application Service
+After=syslog.target network.target
+
+[Service]
+SuccessExitStatus=143
+
+User=user
+Group=group
+
+Type=simple
+
+Environment="JAVA_HOME=/opt/jdk-11"
+WorkingDirectory=/opt/tkash
+ExecStart=/opt/jdk-11/bin/java -jar connector.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
